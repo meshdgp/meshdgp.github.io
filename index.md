@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<img    alt="1.png" src="./1.png" />
+<img    alt="1.png" src="./pics/1.png" />
 
 ---
 ### Drafts in English
