@@ -46,7 +46,9 @@ layout: default
 ---
 <img    alt="1.png" src="./pics/2.jpg" />
 ---
-###微信订阅号：可计算离散整体几何结构二维码
+
+### 微信订阅号：可计算离散整体几何结构二维码
+---
 <img width="200"   alt="1.png" src="./pics/wechat.jpg" />
  
 
