@@ -22,6 +22,7 @@ layout: default
 [Paper 1](./another-page.html)
 
 ### 中文文稿
+
 ---
 1. 可计算离散整体几何结构
 2. 可计算离散整体几何结构全国巡回艺术展
@@ -38,8 +39,8 @@ layout: default
  
 <video 
   src="./pics/eight.mp4"   
-  width="800" 
-  height="400"
+  width="820" 
+  height="500"
   controls          
 > 
 </video>
@@ -47,7 +48,7 @@ layout: default
 <img    alt="1.png" src="./pics/2.jpg" />
 ---
 
-huizhao    
+HuiZhao   
 
 graphicsresearch@qq.com
 ---
