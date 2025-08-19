@@ -19,3 +19,4 @@ This is a normal paragraph following a header. GitHub is a code hosting platform
 >
 > When something is important enough, you do it even if the odds are not in your favor.
 
+![Uploading Clip_2025-08-19_10-29-34.png…]()
