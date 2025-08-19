@@ -6,6 +6,7 @@ The Lab of computational discrete global geometric structures
 
 [Link to another page](./another-page.html).
 
+<img    alt="1.png" src="./1.png" />
  
 There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
 
