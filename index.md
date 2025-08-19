@@ -13,7 +13,7 @@ layout: default
 5. Computational Discrete Global Geometric Structures
 6. Super Structured Quad Mesh
 ---
-[Link to another page](./another-page.html).
+ 
 [Paper 1](./another-page.html)
 
  ## 中文文稿
@@ -25,18 +25,7 @@ layout: default
 5. 可计算离散整体几何结构
 6. 超结构化四边形网格
 ---
-There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
----
-# Paper 
-
-This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
-
-## Paper 2
-
-This is a blockquote following a header.
-
-When something is important enough, you do it even if the odds are not in your favor.
-
+ 
 
 
 
