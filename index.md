@@ -15,6 +15,7 @@ layout: default
 7. A Visual Demonstration：Umbilic Torus
 8. The Seminar of Differential Geometry Teaching by Code and Visulization
 9. Computational Discrete Global Geometric Structures for Quantum Understanding
+10. A Scientist Question: Research on the Impact of Super Structured Quadrilateral Meshes on Convergence and Accuracy of Finite Element Analysis 
    
 ---
  
@@ -31,6 +32,7 @@ layout: default
 7. 举例说明：Umbilic Torus
 8. 微分几何可视化代码教学创新研讨会
 9. 量子力学的可计算离散整体几何结构解释
+10. 提出一个科学问题：超结构化四边形网格对于有限元计算收敛性和精度的影响
    
 ---
  
