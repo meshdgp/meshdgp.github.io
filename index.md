@@ -38,10 +38,14 @@ layout: default
  
 <video 
   src="./pics/eight.mp4"   
-  width="1000" 
+  width="800" 
+  height="400"
   controls          
 > 
 </video>
-
+---
+<img    alt="1.png" src="./pics/2.jpg" />
+---
+<img width="200"   alt="1.png" src="./pics/wechat.jpg" />
  
 
