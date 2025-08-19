@@ -9,7 +9,7 @@ layout: default
 <img    alt="1.png" src="./1.png" />
 
 ```js
-Paper 1 (./another-page.html)
+[Paper 1] (./another-page.html)
  
 ```
  
