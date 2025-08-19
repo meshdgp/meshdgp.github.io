@@ -4,7 +4,7 @@ layout: default
 <img    alt="1.png" src="./1.png" />
 
 ---
-## Drafts in English
+### Drafts in English
 ---
 1. A mesh processing code platform: meshDGP
 2. Mesh SquareTable Workshop
@@ -14,11 +14,12 @@ layout: default
 6. Super Structured Quad Mesh
 7. A Visual Demonstration：Umbilic Torus
 8. The Seminar of Differential Geometry Teaching by Code and Visulization
+   
 ---
  
 [Paper 1](./another-page.html)
 
- ## 中文文稿
+### 中文文稿
 ---
 1. 网格处理代码平台meshdgp
 2. 系列网格方桌会议
@@ -28,6 +29,7 @@ layout: default
 6. 超结构化四边形网格
 7. 举例说明：Umbilic Torus
 8. 微分几何可视化代码教学创新研讨会
+   
 ---
  
 
