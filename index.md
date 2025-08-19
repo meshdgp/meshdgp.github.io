@@ -38,14 +38,10 @@ layout: default
  
 <video 
   src="./pics/eight.mp4"   
+  width="600" 
   controls          
 > 
 </video>
 
-<iframe   
-  src="./pics/eight.mp4" 
-  frameborder="0" 
-  allowfullscreen
-></iframe>
-
+ 
 
