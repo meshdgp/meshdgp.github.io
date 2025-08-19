@@ -19,8 +19,10 @@ layout: default
    
 ---
  
+<img    alt="1.png" src="./pics/2.jpg" />
 [Paper 1](./another-page.html)
 
+---
 ### 中文文稿
 
 ---
@@ -44,8 +46,7 @@ layout: default
   controls          
 > 
 </video>
----
-<img    alt="1.png" src="./pics/2.jpg" />
+ 
 ---
 
 HuiZhao   
