@@ -10,7 +10,7 @@ layout: default
 
 ```js
 [Paper 1] (./another-page.html)
- 
+ [paper 23](./another-page.html).
 ```
  
 There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
