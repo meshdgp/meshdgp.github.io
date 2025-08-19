@@ -8,10 +8,11 @@ layout: default
 
 <img    alt="1.png" src="./1.png" />
 
-[Paper 1] (./another-page.html)
+
+[Link to another page](./another-page.html).
+[Paper 1](./another-page.html)
 ```js
-[Paper 1] (./another-page.html)
- [paper 23](./another-page.html).
+[Paper 1](./another-page.html)
 ```
  
 There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
