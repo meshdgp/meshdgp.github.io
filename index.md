@@ -4,8 +4,6 @@ layout: default
 
  
 
-[Link to another page](./another-page.html).
-
 <img    alt="1.png" src="./1.png" />
 
 
