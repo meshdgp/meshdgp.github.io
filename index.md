@@ -8,6 +8,7 @@ layout: default
 
 <img    alt="1.png" src="./1.png" />
 
+[Paper 1] (./another-page.html)
 ```js
 [Paper 1] (./another-page.html)
  [paper 23](./another-page.html).
