@@ -48,6 +48,8 @@ layout: default
 </video>
  
 ---
+[Biblex](./huizhao.txt)
+---
 
 HuiZhao   
 
