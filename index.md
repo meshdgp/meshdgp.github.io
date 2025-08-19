@@ -37,13 +37,13 @@ layout: default
 ---
  
 <video 
-  src="./pic/eight.mp4"   
+  src="./pics/eight.mp4"   
   controls          
 > 
 </video>
 
 <iframe   
-  src="./pic/eight.mp4" 
+  src="./pics/eight.mp4" 
   frameborder="0" 
   allowfullscreen
 ></iframe>
