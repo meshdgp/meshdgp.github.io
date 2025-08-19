@@ -15,10 +15,10 @@ This is a normal paragraph following a header. GitHub is a code hosting platform
 
 ## Paper 2
 
-> This is a blockquote following a header.
->
-> When something is important enough, you do it even if the odds are not in your favor.
- <img  height="714" alt="Clip_2025-08-19_10-29-34" src="https://github.com/user-attachments/assets/147c633a-33d4-481d-a546-b5eabe2707fb" />
+This is a blockquote following a header.
+
+When something is important enough, you do it even if the odds are not in your favor.
+ <img    alt="Clip_2025-08-19_10-29-34" src="https://github.com/user-attachments/assets/147c633a-33d4-481d-a546-b5eabe2707fb" />
 
 
 
