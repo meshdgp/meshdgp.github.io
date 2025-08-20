@@ -61,7 +61,7 @@ HuiZhao
 graphicsresearch@qq.com
 ---
 
-### 微信订阅号：可计算离散整体几何结构二维码
+### 微信订阅号：[可计算离散整体几何结构二维码](https://mp.weixin.qq.com/s/bydA_SMV-Hu1VHYOhrvsGA)
 ---
 <img width="200"   alt="1.png" src="./pics/wechat.jpg" />
  
