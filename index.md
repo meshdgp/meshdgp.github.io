@@ -6,16 +6,17 @@ layout: default
 ---
 ### Drafts in English
 ---
-1. Computational Discrete Global Geometric Structures
-2. A global Touring Art Exhibition of Computational Discrete Global Geometric Structures
-3. A mesh processing code platform: meshDGP
-4. Mesh SquareTable Workshop
-5. The roadmap for the next generation of Industry software
+1. [Computational Discrete Global Geometric Structures](./drafts/Computational Discrete Global Geometric Structures.pdf)
+2. [A global Touring Art Exhibition of Computational Discrete Global Geometric Structures](./drafts/A global Touring Art Exhibition of Computational Discrete Global Geometric Structures.pdf)
+3. [A mesh processing code platform: meshDGP](./drafts/meshDGP.pdf)
+4. [Mesh SquareTable Workshop](./drafts/Mesh SquareTable Workshop.pdf)
+5. [The roadmap for the next generation of Industry software](./drafts/The roadmap for the next generation of Industry software.pdf)
 6. Super Structured Quad Mesh
 7. A Visual Demonstration：Umbilic Torus
 8. The Seminar of Differential Geometry Teaching by Code and Visulization
-9. Computational Discrete Global Geometric Structures for Quantum Understanding
-10. A Scientist Question: Research on the Impact of Super Structured Quadrilateral Meshes on Convergence and Accuracy of Finite Element Analysis 
+9. [Computational Discrete Global Geometric Structures for Quantum Understanding](./drafts/Quantum_Foliation_HuiZhao.pdf)
+10. [Scientist Question: Research on the Impact of Super Structured Quadrilateral Meshes on Convergence and Accuracy of Finite Element Analysis](./drafts/A Scientist Question.pdf)
+11. A Geometry and Topology Code Platform: Geometric
    
 ---
  
@@ -36,6 +37,7 @@ layout: default
 8. 微分几何可视化代码教学创新研讨会
 9. [量子力学的可计算离散整体几何结构解释](./drafts/Quantum_Foliation_HuiZhao.pdf)
 10. [提出一个科学问题：超结构化四边形网格对于有限元计算收敛性和精度的影响](./drafts/A Scientist Question.pdf)
+11. 原创几何拓扑代码平台：Geometric
    
 ---
  
