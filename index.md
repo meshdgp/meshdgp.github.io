@@ -17,12 +17,12 @@ layout: default
 9. [Computational Discrete Global Geometric Structures for Quantum Understanding](./drafts/Quantum_Foliation_HuiZhao.pdf)
 10. [Scientist Question: Research on the Impact of Super Structured Quadrilateral Meshes on Convergence and Accuracy of Finite Element Analysis](./drafts/A Scientist Question.pdf)
 11. A Geometry and Topology Code Platform: Geometric
-   
+   [Biblex](./huizhaoEnglish.txt)
 ---
  
-<img    alt="1.png" src="./pics/2.jpg" />
-[Paper 1](./another-page.html)
-
+<img    alt="1.png" src="./pics/3.jpg" />
+ 
+<img    alt="1.png" src="./pics/4.jpg" />
 ---
 ### 中文文稿
 
@@ -38,6 +38,7 @@ layout: default
 9. [量子力学的可计算离散整体几何结构解释](./drafts/Quantum_Foliation_HuiZhao.pdf)
 10. [提出一个科学问题：超结构化四边形网格对于有限元计算收敛性和精度的影响](./drafts/A Scientist Question.pdf)
 11. 原创几何拓扑代码平台：Geometric
+    [Biblex](./huizhaoChinese.txt)
    
 ---
  
@@ -49,7 +50,8 @@ layout: default
 </video>
  
 ---
-[Biblex](./huizhao.txt)
+ 
+<img    alt="1.png" src="./pics/5.jpg" />
 ---
 
 HuiZhao   
@@ -61,4 +63,5 @@ graphicsresearch@qq.com
 ---
 <img width="200"   alt="1.png" src="./pics/wechat.jpg" />
  
-
+<img    alt="1.png" src="./pics/6.jpg" />
+<img    alt="1.png" src="./pics/7.jpg" />
