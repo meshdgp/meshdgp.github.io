@@ -43,8 +43,7 @@ layout: default
  
 <video 
   src="./pics/eight.mp4"   
-  width="820" 
-  height="500"
+  width="100%"  
   controls          
 > 
 </video>
