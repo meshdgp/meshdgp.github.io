@@ -51,7 +51,25 @@ layout: default
   controls          
 > 
 </video>
- 
+
+---
+### 可计算离散整体几何结构全国巡回艺术展
+### （A global Touring Art Exhibition of Computational Discrete Global Geometric Structures）
+---
+
+(1)[中原工学院](https://mp.weixin.qq.com/s/mVaDImjek1VJCPbjgfI4bw)
+(2)[中科院长春光机所](https://mp.weixin.qq.com/s/AA_ZhkyNIc2nWHq3z9p-_Q)
+(3)[华北电力大学](https://mp.weixin.qq.com/s/q4h2WkD9jV79fLYk--sNlQ)
+(4)[河南大学](https://mp.weixin.qq.com/s/dooc_h1OxEiNLZMNEjSRVQ)
+(5)[西华大学](https://mp.weixin.qq.com/s/G4TtixduxS_IPJg5Zzagzw)
+(6)[中国人民大学](https://mp.weixin.qq.com/s/077pHFpz-JUJ-ViBXwym8Q)
+(7)[中南民族大学](https://mp.weixin.qq.com/s/eupOQjy87pkB6YZVjAgExw)
+(8)[天津城建大学](https://mp.weixin.qq.com/s/8XSdyecEtaaPRW6XbyJ2fA)
+(9)[太原理工大学](https://mp.weixin.qq.com/s/f_Ii5_ucM16i1CYOgFrCrA)
+(10)[中国科学院合肥物质科学研究院强磁场科学中心](https://mp.weixin.qq.com/s/Shlo_pytclL6M2F3jrlM1w)
+(11)[江西理工大学](https://mp.weixin.qq.com/s/XoP9HyH8W98tm_YOdYshSg)
+(12)[大理李政道科学艺术中心](https://mp.weixin.qq.com/s/wM0P6jsoCdhWNO6vbYavXg)
+
 ---
  
 <img    alt="1.png" src="./pics/5.png" />
