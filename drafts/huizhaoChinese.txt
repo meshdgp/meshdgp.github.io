@@ -1,0 +1,81 @@
+@misc{zhao2025Question,
+      title={一个科学问题：超结构化四边形网格对有限元计算收敛和精度的影响}, 
+      author={赵辉},
+      year={2025},
+      eprint={2507.17184},
+      archivePrefix={arXiv},
+      primaryClass={cs.GR},
+      url={https://arxiv.org/abs/2507.17184}, 
+}
+@misc{zhao2025Computational,
+      title={可计算离散整体几何结构}, 
+      author={赵辉},
+      year={2025}, 
+      publisher={可计算离散整体几何结构实验室}
+      url={https://meshdgp.github.io/}, 
+}
+
+@misc{zhao2025Touring,
+      title={可计算离散整体几何结构全国巡回艺术展}, 
+      author={赵辉},
+      year={2025}, 
+      publisher={可计算离散整体几何结构实验室}
+      url={https://meshdgp.github.io/}, 
+}
+
+@misc{zhao2025meshDGP,
+      title={网格处理代码平台meshdgp}, 
+      author={赵辉},
+      year={2025}, 
+      publisher={可计算离散整体几何结构实验室}
+      url={https://meshdgp.github.io/}, 
+}
+@misc{zhao2025SquareTable,
+      title={系列网格方桌会议}, 
+      author={赵辉},
+      year={2025}, 
+      publisher={可计算离散整体几何结构实验室}
+      url={https://meshdgp.github.io/}, 
+}
+
+
+@misc{zhao2025roadmap,
+      title={中国科协2025年十大工程技术难题之“复杂模型的设计-仿真-制造一体化算法与理论”的解决方案路线图}, 
+      author={赵辉},
+      year={2025}, 
+      publisher={可计算离散整体几何结构实验室}
+      url={https://meshdgp.github.io/}, 
+}
+
+
+@misc{zhao2025Super,
+      title={超结构化四边形网格}, 
+      author={赵辉},
+      year={2025}, 
+      publisher={可计算离散整体几何结构实验室}
+      url={https://meshdgp.github.io/}, 
+}
+
+@misc{zhao2025Umbilic,
+      title={举例说明：Umbilic Torus}, 
+      author={赵辉},
+      year={2025}, 
+      publisher={可计算离散整体几何结构实验室}
+      url={https://meshdgp.github.io/}, 
+}
+
+@misc{zhao2025Teaching,
+      title={微分几何可视化代码教学创新研讨会}, 
+      author={Hui Zhao},
+      year={2025}, 
+      publisher={可计算离散整体几何结构实验室}
+      url={https://meshdgp.github.io/}, 
+}
+
+@misc{zhao2025Quantum,
+      title={量子力学的可计算离散整体几何结构解释}, 
+      author={赵辉},
+      year={2025}, 
+      publisher={可计算离散整体几何结构实验室}
+      url={https://meshdgp.github.io/}, 
+}

@@ -1,0 +1,88 @@
+@misc{zhao2025Question,
+      title={A Scientist Question: Research on the Impact of Super Structured Quadrilateral Meshes on Convergence and Accuracy of Finite Element Analysis}, 
+      author={Hui Zhao},
+      year={2025},
+      eprint={2507.17184},
+      archivePrefix={arXiv},
+      primaryClass={cs.GR},
+      url={https://arxiv.org/abs/2507.17184}, 
+}
+@misc{zhao2025Computational,
+      title={Computational Discrete Global Geometric Structures}, 
+      author={Hui Zhao},
+      year={2025}, 
+      publisher={The Lab of Computational Discrete Global Geometric Structures}
+      url={https://meshdgp.github.io/}, 
+}
+
+@misc{zhao2025Touring,
+      title={A global Touring Art Exhibition of Computational Discrete Global Geometric Structures}, 
+      author={Hui Zhao},
+      year={2025}, 
+      publisher={The Lab of Computational Discrete Global Geometric Structures}
+      url={https://meshdgp.github.io/}, 
+}
+
+@misc{zhao2025meshDGP,
+      title={A mesh processing code platform: meshDGP}, 
+      author={Hui Zhao},
+      year={2025}, 
+      publisher={The Lab of Computational Discrete Global Geometric Structures}
+      url={https://meshdgp.github.io/}, 
+}
+@misc{zhao2025SquareTable,
+      title={Mesh SquareTable Workshop}, 
+      author={Hui Zhao},
+      year={2025}, 
+      publisher={The Lab of Computational Discrete Global Geometric Structures}
+      url={https://meshdgp.github.io/}, 
+}
+
+
+@misc{zhao2025roadmap,
+      title={The roadmap for the next generation of Industry software}, 
+      author={Hui Zhao},
+      year={2025}, 
+      publisher={The Lab of Computational Discrete Global Geometric Structures}
+      url={https://meshdgp.github.io/}, 
+}
+
+
+@misc{zhao2025Super,
+      title={Super Structured Quad Mesh}, 
+      author={Hui Zhao},
+      year={2025}, 
+      publisher={The Lab of Computational Discrete Global Geometric Structures}
+      url={https://meshdgp.github.io/}, 
+}
+
+@misc{zhao2025Umbilic,
+      title={A Visual Demonstration：Umbilic Torus}, 
+      author={Hui Zhao},
+      year={2025}, 
+      publisher={The Lab of Computational Discrete Global Geometric Structures}
+      url={https://meshdgp.github.io/}, 
+}
+
+@misc{zhao2025Teaching,
+      title={The Seminar of Differential Geometry Teaching by Code and Visulization}, 
+      author={Hui Zhao},
+      year={2025}, 
+      publisher={The Lab of Computational Discrete Global Geometric Structures}
+      url={https://meshdgp.github.io/}, 
+}
+
+@misc{zhao2025Quantum,
+      title={Computational Discrete Global Geometric Structures for Quantum Understanding}, 
+      author={Hui Zhao},
+      year={2025}, 
+      publisher={The Lab of Computational Discrete Global Geometric Structures}
+      url={https://meshdgp.github.io/}, 
+}
+
+
+ 
+ 
+
+
+ 
