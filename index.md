@@ -7,7 +7,7 @@ layout: default
 ### Drafts in English
 ---
 1. [Computational Discrete Global Geometric Structures](./drafts/Computational Discrete Global Geometric Structures.pdf)
-2. [A global Touring Art Exhibition of Computational Discrete Global Geometric Structures](./drafts/A global Touring Art Exhibition of Computational Discrete Global Geometric Structures.pdf)
+2. [A global Touring of Art Exhibition of Computational Discrete Global Geometric Structures](./drafts/A global Touring Art Exhibition of Computational Discrete Global Geometric Structures.pdf)
 3. [A mesh processing code platform: meshDGP](./drafts/meshDGP.pdf)
 4. [Mesh SquareTable Workshop](./drafts/Mesh SquareTable Workshop.pdf)
 5. [The roadmap for the next generation of Industry software](./drafts/The roadmap for the next generation of Industry software.pdf)
@@ -54,7 +54,7 @@ layout: default
 
 ---
 ### 可计算离散整体几何结构全国巡回艺术展
-### A global Touring Art Exhibition of Computational Discrete Global Geometric Structures
+### A global Touring of Art Exhibition of Computational Discrete Global Geometric Structures
 ---
 
 (1)[中原工学院](https://mp.weixin.qq.com/s/mVaDImjek1VJCPbjgfI4bw)
