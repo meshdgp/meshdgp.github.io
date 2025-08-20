@@ -20,9 +20,9 @@ layout: default
    [BibTex](./huizhaoEnglish.txt)
 ---
  
-<img    alt="1.png" src="./pics/3.jpg" />
+<img    alt="1.png" src="./pics/3.png" />
  
-<img    alt="1.png" src="./pics/4.jpg" />
+<img    alt="1.png" src="./pics/4.png" />
 ---
 ### 中文文稿
 
@@ -51,7 +51,7 @@ layout: default
  
 ---
  
-<img    alt="1.png" src="./pics/5.jpg" />
+<img    alt="1.png" src="./pics/5.png" />
 ---
 
 HuiZhao   
@@ -63,5 +63,5 @@ graphicsresearch@qq.com
 ---
 <img width="200"   alt="1.png" src="./pics/wechat.jpg" />
  
-<img    alt="1.png" src="./pics/6.jpg" />
-<img    alt="1.png" src="./pics/7.jpg" />
+<img    alt="1.png" src="./pics/6.png" />
+<img    alt="1.png" src="./pics/7.png" />
