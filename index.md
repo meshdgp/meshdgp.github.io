@@ -5,7 +5,7 @@ layout: default
 
 ---
 <p style="text-align: justify;">
-Global geometric structures are geometric objects residing on various fiber bundles bundles over manifolds, with their types numbering in the hundreds. They are finer than topological structures.
+Global geometric structures are geometric objects residing on various fiber bundles bundles over manifolds, with their types numbering in the hundreds. They are finer structures than topology.
     
 Computational Discrete Global Geometric Structure is a pioneering research field defined and established by Hui Zhao. 
 It focuses on three key areas:
