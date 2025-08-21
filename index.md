@@ -4,11 +4,14 @@ layout: default
 <img    alt="1.png" src="./pics/1.png" />
 
 ---
-
-Global geometric structures are geometric objects residing on various fiber bundles over manifolds, with their types numbering in the hundreds.
-
-Computational Discrete Global Geometric Structures, a pioneering research field defined by Hui Zhao, focuses on developing algorithms to construct and visulize diverse global geometric structures on discrete meshes, such as 1-forms, foliations, index counting, square tiling, quadratic differentials, spin structures, and others.
-
+<p style="text-align: justify;">
+Global geometric structures are geometric objects residing on various fiber bundles bundles over manifolds, with their types numbering in the hundreds. They are finer than topological structures.
+Computational Discrete Global Geometric Structure is a pioneering research field defined and established by Hui Zhao. 
+It focuses on three key areas:
+1) developing algorithms for constructing diverse global geometric structures on discrete meshes;
+2) visualizing global geometric structures;
+3) exploring the applications of these implemented algorithms across various technological domains.
+</p>
 ---
 ### Drafts in English
 ---
