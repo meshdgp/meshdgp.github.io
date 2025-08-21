@@ -38,7 +38,7 @@ It focuses on three key areas:
 8. The Seminar of Differential Geometry Teaching by Code and Visulization
 9. [Computational Discrete Global Geometric Structures for Quantum Understanding](./drafts/Quantum_Foliation_HuiZhao.pdf)
 10. [Scientist Question: Research on the Impact of Super Structured Quadrilateral Meshes on Convergence and Accuracy of Finite Element Analysis](./drafts/A Scientist Question.pdf)
-11. A Geometry and Topology Code Platform: Geometric
+11. [A Geometry and Topology Code Platform: Geometric](./drafts/Geometric.pdf)
     
    [BibTex](./drafts/huizhaoEnglish.txt)
    
@@ -61,7 +61,7 @@ It focuses on three key areas:
 8. 微分几何可视化代码教学创新研讨会
 9. [量子力学的可计算离散整体几何结构解释](./drafts/Quantum_Foliation_HuiZhao.pdf)
 10. [提出一个科学问题：超结构化四边形网格对于有限元计算收敛性和精度的影响](./drafts/A Scientist Question.pdf)
-11. 原创几何拓扑代码平台：Geometric
+11. [可计算离散整体几何结构原创几何拓扑代码平台：Geometric](./drafts/Geometric.pdf)
     
     [BibTex](./drafts/huizhaoChinese.txt)
    
