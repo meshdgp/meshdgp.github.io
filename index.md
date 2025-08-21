@@ -13,13 +13,18 @@ It focuses on three key areas:
 <br>
 <br>    
 1) developing algorithms for constructing diverse global geometric structures on discrete meshes;
-<br>   
+<br>
+<br>
 3) visualizing global geometric structures;
-<br>   
+<br>
+<br>
 5) exploring the applications of these implemented algorithms across various technological domains.
+<br>
 <br>
 </p>
 ---
+
+
 ### Drafts in English
 ---
 1. [Computational Discrete Global Geometric Structures](./drafts/Computational Discrete Global Geometric Structures.pdf)
