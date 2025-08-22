@@ -5,7 +5,7 @@ layout: default
 
 ---
 <p style="text-align: justify;">
-Global geometric structures are geometric objects residing on various fiber bundles bundles over manifolds, with their types numbering in the hundreds. They are finer structures than topology.
+Global geometric structures are geometric objects residing on various fiber bundles  over manifolds, with their types numbering in the hundreds. They are finer structures than topology.
 <br>
 <br>
 Computational Discrete Global Geometric Structure is a pioneering research field defined and established by Hui Zhao. 
@@ -16,10 +16,10 @@ It focuses on three key areas:
 1) developing algorithms for constructing diverse global geometric structures on discrete meshes;
 <br>
 <br>
-3) visualizing global geometric structures;
+2) visualizing global geometric structures;
 <br>
 <br>
-5) exploring the applications of these implemented algorithms across various technological domains.
+3) exploring the applications of these implemented algorithms across various technological domains.
 <br>
 <br>
 </p>
@@ -35,7 +35,7 @@ It focuses on three key areas:
 5. [The roadmap for the next generation of Industry software](./drafts/The roadmap for the next generation of Industry software.pdf)
 6. [Super Structured Quad Mesh](./drafts/Super Structured Quad Mesh.pdf)
 7. A Visual Demonstration：Umbilic Torus
-8. The Seminar of Differential Geometry Teaching by Code and Visulization
+8. [The Seminar of Differential Geometry Teaching by Code and Visulization](./drafts/GeometryTeaching.pdf)
 9. [Computational Discrete Global Geometric Structures for Quantum Understanding](./drafts/Quantum_Foliation_HuiZhao.pdf)
 10. [Scientist Question: Research on the Impact of Super Structured Quadrilateral Meshes on Convergence and Accuracy of Finite Element Analysis](./drafts/A Scientist Question.pdf)
 11. [A Geometry and Topology Code Platform: Geometric](./drafts/Geometric.pdf)
@@ -58,7 +58,7 @@ It focuses on three key areas:
 5. [中国科协2025年十大工程技术难题之“复杂模型的设计-仿真-制造一体化算法与理论”的解决方案路线图](./drafts/The roadmap for the next generation of Industry software.pdf)
 6. [超结构化四边形网格](./drafts/Super Structured Quad Mesh.pdf)
 7. 举例说明：Umbilic Torus
-8. 微分几何可视化代码教学创新研讨会
+8. [微分几何可视化代码教学创新研讨会](./drafts/GeometryTeaching.pdf)
 9. [量子力学的可计算离散整体几何结构解释](./drafts/Quantum_Foliation_HuiZhao.pdf)
 10. [提出一个科学问题：超结构化四边形网格对于有限元计算收敛性和精度的影响](./drafts/A Scientist Question.pdf)
 11. [可计算离散整体几何结构原创几何拓扑代码平台：Geometric](./drafts/Geometric.pdf)
