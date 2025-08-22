@@ -82,7 +82,18 @@
 
 
  
- 
+Hui Zhao，Computational Discrete Global Geometric Structures，2025，https://meshdgp.github.io/ 
+Hui Zhao，A global Touring of Art Exhibition of Computational Discrete Global Geometric Structures，2025，https://meshdgp.github.io/
+Hui Zhao，A mesh processing code platform: meshDGP，2025，https://meshdgp.github.io/
+Hui Zhao，Mesh SquareTable Workshop，2025，https://meshdgp.github.io/
+Hui Zhao，The roadmap for the next generation of Industry software，2025，https://meshdgp.github.io/
+Hui Zhao，Super Structured Quad Mesh，2025，https://meshdgp.github.io/
+Hui Zhao，A Visual Demonstration：Umbilic Torus，2025，https://meshdgp.github.io/
+Hui Zhao，The Seminar of Differential Geometry Teaching by Code and Visulization，2025，https://meshdgp.github.io/
+Hui Zhao，Computational Discrete Global Geometric Structures for Quantum Understanding，2025，https://meshdgp.github.io/
+Hui Zhao，Scientist Question: Research on the Impact of Super Structured Quadrilateral Meshes on Convergence and Accuracy of Finite Element Analysis，2025，https://meshdgp.github.io/
+Hui Zhao，A Geometry and Topology Code Platform: Geometric，2025，https://meshdgp.github.io/
+
 
 
  
