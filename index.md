@@ -75,7 +75,7 @@ It focuses on three key areas:
   controls          
 > 
 </video>
-
+<p style="text-align: center;">Geometric Demos</p>
 ---
 ### 可计算离散整体几何结构全国巡回艺术展
 ### A global Touring of Art Exhibition of Computational Discrete Global Geometric Structures
@@ -191,8 +191,16 @@ It focuses on three key areas:
 <img    alt="1.png" src="./pics/6.png" />
 
 ---
+<video 
+  src="./pics/meshDGP.mp4"   
+  width="100%"  
+  controls          
+> 
+</video>
+<p style="text-align: center;">meshDGP Demos</p>
+---
 
-HuiZhao   
+Hui Zhao   
 
 graphicsresearch@qq.com
 ---
