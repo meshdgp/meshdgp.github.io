@@ -81,6 +81,41 @@
 
 }
 
+@misc{zhao2025Question,
+      title={提出一个科学问题：超结构化四边形网格对于有限元计算收敛性和精度的影响}, 
+      author={赵辉},
+      year={2025}, 
+      publisher={力学大会2025} 
+
+}
+
+@misc{zhao2025Geometric,
+      title={可计算离散整体几何结构原创几何拓扑代码平台：Geometric}, 
+      author={赵辉},
+      year={2025}, 
+      publisher={可计算离散整体几何结构实验室}
+      url={https://meshdgp.github.io/}, 
+
+}
+
+@misc{zhao2025Study,
+      title={meshDGP 学习会}, 
+      author={赵辉},
+      year={2025}, 
+      publisher={可计算离散整体几何结构实验室}
+      url={https://meshdgp.github.io/}, 
+
+}
+
+@misc{zhao2025Graphics,
+      title={计算机图形学}, 
+      author={赵辉},
+      year={2025}, 
+      publisher={可计算离散整体几何结构实验室}
+      url={https://meshdgp.github.io/}, 
+
+}
+
 
 赵辉，可计算离散整体几何结构，2025年8月，https://meshdgp.github.io/
 赵辉，可计算离散整体几何结构全国巡回艺术展，2025年8月，https://meshdgp.github.io/
@@ -93,4 +128,5 @@
 赵辉，量子力学的可计算离散整体几何结构解释，2025年8月，https://meshdgp.github.io/
 赵辉，提出一个科学问题：超结构化四边形网格对于有限元计算收敛性和精度的影响，力学大会2025， 2025年7月
 赵辉，可计算离散整体几何结构原创几何拓扑代码平台：Geometric，2025年8月，https://meshdgp.github.io/
+赵辉，现代化计算机图形学，2025年8月，https://meshdgp.github.io/
 
