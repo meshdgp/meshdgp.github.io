@@ -40,6 +40,7 @@ It focuses on three key areas:
 10. [Scientist Question: Research on the Impact of Super Structured Quadrilateral Meshes on Convergence and Accuracy of Finite Element Analysis](./drafts/A Scientist Question.pdf)
 11. [A Geometry and Topology Code Platform: Geometric](./drafts/Geometric.pdf)
 12. [meshDGP Study Workshop](./drafts/Study workshop.pdf)
+13. [Computer Graphics])(./drafts/graphics.pdf)
     
    [BibTex](./drafts/huizhaoEnglish.txt)
    
@@ -64,6 +65,7 @@ It focuses on three key areas:
 10. [提出一个科学问题：超结构化四边形网格对于有限元计算收敛性和精度的影响](./drafts/A Scientist Question.pdf)
 11. [可计算离散整体几何结构原创几何拓扑代码平台：Geometric](./drafts/Geometric.pdf)
 12. [meshDGP 学习会](./drafts/Study workshop.pdf)
+13. [计算机图形学](./drafts/graphics.pdf)
     
     [BibTex](./drafts/huizhaoChinese.txt)
    
