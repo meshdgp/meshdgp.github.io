@@ -40,7 +40,7 @@ It focuses on three key areas:
 10. [Scientist Question: Research on the Impact of Super Structured Quadrilateral Meshes on Convergence and Accuracy of Finite Element Analysis](./drafts/A Scientist Question.pdf)
 11. [A Geometry and Topology Code Platform: Geometric](./drafts/Geometric.pdf)
 12. [meshDGP Study Workshop](./drafts/Study workshop.pdf)
-13. [Computer Graphics])(./drafts/graphics.pdf)
+13. [Computer Graphics](./drafts/graphics.pdf)
     
    [BibTex](./drafts/huizhaoEnglish.txt)
    
