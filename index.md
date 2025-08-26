@@ -34,7 +34,7 @@ It focuses on three key areas:
 4. [Mesh SquareTable Workshop](./drafts/Mesh SquareTable Workshop.pdf)
 5. [The roadmap for the next generation of Industry software](./drafts/The roadmap for the next generation of Industry software.pdf)
 6. [Super Structured Quad Mesh](./drafts/Super Structured Quad Mesh.pdf)
-7. A Visual Demonstration：Umbilic Torus
+7. [Umbilic Torus: the simplest super structed quad mesh](./drafts/UmbilicTorus.pdf)
 8. [The Seminar of Differential Geometry Teaching by Code and Visulization](./drafts/GeometryTeaching.pdf)
 9. [Computational Discrete Global Geometric Structures for Quantum Understanding](./drafts/Quantum_Foliation_HuiZhao.pdf)
 10. [Scientist Question: Research on the Impact of Super Structured Quadrilateral Meshes on Convergence and Accuracy of Finite Element Analysis](./drafts/A Scientist Question.pdf)
@@ -59,7 +59,7 @@ It focuses on three key areas:
 4. [系列网格方桌会议](./drafts/Mesh SquareTable Workshop.pdf)
 5. [中国科协2025年十大工程技术难题之“复杂模型的设计-仿真-制造一体化算法与理论”的解决方案路线图](./drafts/The roadmap for the next generation of Industry software.pdf)
 6. [超结构化四边形网格](./drafts/Super Structured Quad Mesh.pdf)
-7. 举例说明：Umbilic Torus
+7. [Umbilic Torus：最简单的超结构化四边形网格可视化实例](./drafts/UmbilicTorus.pdf)
 8. [微分几何可视化代码教学创新研讨会](./drafts/GeometryTeaching.pdf)
 9. [量子力学的可计算离散整体几何结构解释](./drafts/Quantum_Foliation_HuiZhao.pdf)
 10. [提出一个科学问题：超结构化四边形网格对于有限元计算收敛性和精度的影响](./drafts/A Scientist Question.pdf)
