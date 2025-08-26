@@ -13,7 +13,7 @@ Computational Discrete Global Geometric Structure is a pioneering research field
 It focuses on three key areas:
 <br>
 <br>    
-1) developing algorithms for constructing diverse global geometric structures on discrete meshes;
+1) developing and implemented algorithms for constructing diverse global geometric structures on discrete meshes to catch their "global properties";
 <br>
 <br>
 2) visualizing global geometric structures;
