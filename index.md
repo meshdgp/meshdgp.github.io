@@ -202,6 +202,8 @@ It focuses on three key areas:
 <p style="text-align: center;">meshDGP Demos</p>
 ---
 
+##[The Journal of Computational Discrete Global Geometric Structures]/(./journal.html)
+---
 Hui Zhao   
 
 graphicsresearch@qq.com
