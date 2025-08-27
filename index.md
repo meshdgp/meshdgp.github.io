@@ -203,6 +203,7 @@ It focuses on three key areas:
 ---
 
 ##  [The Journal of Computational Discrete Global Geometric Structures](./journal.md)
+
 ---
 Hui Zhao   
 
