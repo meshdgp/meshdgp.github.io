@@ -2,8 +2,9 @@
 layout: default
  
 ---
+<link rel="icon" type="image/png" href="./pics/icon.png">
 <img    alt="1.png" src="./pics/1.png" />
-<link rel="icon" type="image/png" href="/pics/icon.png">
+ 
 ---
 <p style="text-align: justify;">
 Global geometric structures are geometric objects residing on various fiber bundles  over manifolds, with their types numbering in the hundreds. They are finer structures than topology.
