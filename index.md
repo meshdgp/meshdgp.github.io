@@ -35,7 +35,7 @@ It focuses on three key areas:
 3. [A mesh processing code platform: meshDGP](./drafts/meshDGP.pdf)
 4. [Mesh SquareTable Workshop](./drafts/Mesh SquareTable Workshop.pdf)
 5. [The roadmap for the next generation of Industry software](./drafts/The roadmap for the next generation of Industry software.pdf)
-6. [Super Structured Quad Mesh](./drafts/Super Structured Quad Mesh.pdf)
+6. [Super Structured Quad Mesh](./drafts/Super Structured Quad Mesh-huizhao.pdf)
 7. [Umbilic Torus: the simplest super structed quad mesh](./drafts/UmbilicTorus.pdf)
 8. [The Seminar of Differential Geometry Teaching by Code and Visulization](./drafts/GeometryTeaching.pdf)
 9. [Computational Discrete Global Geometric Structures for Quantum Understanding](./drafts/Quantum_Foliation_HuiZhao.pdf)
