@@ -11,6 +11,7 @@ title: The Journal of Computational Discrete Global Geometric Structures
 ---
 
 赞助作者一万人民币起拍。
+赞助作者起拍联系graphicsresearch@qq.com
 
 ---
 
