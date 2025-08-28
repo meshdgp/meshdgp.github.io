@@ -28,7 +28,7 @@ It focuses on three key areas:
 
 ### Drafts in English
 ---
-1. [Computational Discrete Global Geometric Structures](./drafts/Computational Discrete Global Geometric Structures.pdf)
+1. [Computational Discrete Global Geometric Structures](./drafts/Computational Discrete Global Geometric Structures-huizhao.pdf)
 2. [A global Touring of Art Exhibition of Computational Discrete Global Geometric Structures](./drafts/A global Touring Art Exhibition of Computational Discrete Global Geometric Structures.pdf)
 3. [A mesh processing code platform: meshDGP](./drafts/meshDGP.pdf)
 4. [Mesh SquareTable Workshop](./drafts/Mesh SquareTable Workshop.pdf)
