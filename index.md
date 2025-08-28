@@ -1,5 +1,6 @@
 ---
 layout: default
+<link rel="icon" type="image/png" href="/pics/icon.png">
 ---
 <img    alt="1.png" src="./pics/1.png" />
 
