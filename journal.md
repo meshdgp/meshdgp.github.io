@@ -65,4 +65,11 @@ title: The Journal of Computational Discrete Global Geometric Structures
 25. [现代化计算机图形学](./drafts/graphics.pdf)
 
     赞助作者：待定
+
+
     
+---
+
+<img    alt="1.png" src="./drafts/JournalCover.png" />
+
+---
