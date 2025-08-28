@@ -9,8 +9,11 @@ title: The Journal of Computational Discrete Global Geometric Structures
 <img    alt="1.png" src="./drafts/JournalOfStructures.png" />
 
 ---
+
 赞助作者一万人民币起拍。
+
 ---
+
 1. [可计算离散整体几何结构](./drafts/Computational Discrete Global Geometric Structures.pdf)
    
    赞助作者：待定
