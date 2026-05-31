@@ -43,6 +43,7 @@ It focuses on three key areas:
 11. [A Geometry and Topology Code Platform: Geometric](./drafts/Geometric.pdf)
 12. [meshDGP Study Workshop](./drafts/Study workshop.pdf)
 13. [Modern Computer Graphics](./drafts/graphics.pdf)
+14. [160 Research Problems on Super Structured Quad  Meshes](./drafts/160-huizhao.pdf)
     
    [BibTex](./drafts/huizhaoEnglish.txt)
    
@@ -68,6 +69,7 @@ It focuses on three key areas:
 11. [可计算离散整体几何结构原创几何拓扑代码平台：Geometric](./drafts/Geometric.pdf)
 12. [meshDGP 学习会](./drafts/Study workshop.pdf)
 13. [现代化计算机图形学](./drafts/graphics.pdf)
+14. [160 个超结构化四边形网格研究问题](./drafts/160-huizhao.pdf)
     
     [BibTex](./drafts/huizhaoChinese.txt)
    
