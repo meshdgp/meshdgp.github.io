@@ -87,6 +87,10 @@ It focuses on three key areas:
 ### A global Touring of Art Exhibition of Computational Discrete Global Geometric Structures
 ---
 
+🚩 [点击查看：全国/全球巡回艺术展31站站点交互式地图](./tour-map.html)
+
+---
+
 (1)[中原工学院](https://mp.weixin.qq.com/s/mVaDImjek1VJCPbjgfI4bw)
 
 (2)[中科院长春光机所](https://mp.weixin.qq.com/s/AA_ZhkyNIc2nWHq3z9p-_Q)
