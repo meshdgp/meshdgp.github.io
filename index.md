@@ -88,6 +88,7 @@ It focuses on three key areas:
 ---
 
 🚩 [点击查看：全国/全球巡回艺术展31站站点交互式地图](./tour-map.html)
+🚩 [English Version: Interactive Site Map](./tour-map-en.html)
 
 ---
 
