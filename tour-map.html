@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>全国/全球巡回艺术展站点地图</title>
+    <title>"可计算离散整体几何结构"全球巡回艺术展 公益几何拓扑科普活动</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" />
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -188,8 +188,8 @@
 </head>
 <body>
     <div id="header">
-        <h1>🚩 全国/全球巡回艺术展站点地图</h1>
-        <p>共 31 站 · 横跨中国 20+ 城市，远赴美国华盛顿、韩国首尔</p>
+        <h1>"可计算离散整体几何结构"全球巡回艺术展</h1>
+        <p>公益几何拓扑科普活动 · 共 31 站 · 横跨中国 20+ 城市，远赴美国华盛顿、韩国首尔</p>
     </div>
     <div id="container">
         <div id="sidebar">
@@ -254,11 +254,19 @@
         zoomControl: true
     }).setView([32.0, 112.0], 4);
 
-    // 添加地图图层 - 高德地图瓦片（国内访问稳定）
-    const normalLayer = L.tileLayer('https://webrd0{s}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}', {
-        attribution: '&copy; 高德地图 AutoNavi',
-        subdomains: ['1', '2', '3', '4'],
-        maxZoom: 18
+    // 添加地图图层 - 腾讯地图瓦片（国内访问稳定快速）
+    const tencentVector = L.tileLayer('https://rt{s}.map.gtimg.com/realtimerender?z={z}&x={x}&y={y}&type=vector&style=0', {
+        attribution: '&copy; 腾讯地图 Tencent Maps',
+        subdomains: ['0', '1', '2', '3'],
+        maxZoom: 18,
+        tms: true
+    });
+
+    const tencentSatellite = L.tileLayer('https://p{s}.map.gtimg.com/sateTiles?z={z}&x={x}&y={y}&style=4', {
+        attribution: '&copy; 腾讯地图 Tencent Maps',
+        subdomains: ['0', '1', '2', '3'],
+        maxZoom: 18,
+        tms: true
     });
 
     // 备用图层 - OpenStreetMap（海外站点用）
@@ -269,11 +277,12 @@
     });
 
     // 添加默认图层
-    normalLayer.addTo(map);
+    tencentVector.addTo(map);
 
     // 图层切换控件
     L.control.layers({
-        "高德地图": normalLayer,
+        "腾讯地图": tencentVector,
+        "腾讯卫星": tencentSatellite,
         "OpenStreetMap": osmLayer
     }, null, { position: 'topright' }).addTo(map);
 
