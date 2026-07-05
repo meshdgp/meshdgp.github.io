@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全国/全球巡回艺术展站点地图</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Microsoft YaHei", "PingFang SC", sans-serif; background: #f0f2f5; }
+        
+        #header {
+            background: linear-gradient(135deg, #c0392b, #e74c3c);
+            color: white;
+            padding: 16px 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            z-index: 1000;
+            position: relative;
+        }
+        #header h1 { font-size: 22px; font-weight: 700; }
+        #header p { font-size: 13px; opacity: 0.9; margin-top: 4px; }
+        
+        #container {
+            display: flex;
+            height: calc(100vh - 70px);
+            min-height: 600px;
+        }
+        
+        #sidebar {
+            width: 340px;
+            background: white;
+            overflow-y: auto;
+            box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+            z-index: 500;
+        }
+        
+        #sidebar .section-title {
+            padding: 12px 16px 8px;
+            font-size: 14px;
+            font-weight: 700;
+            color: #c0392b;
+            border-bottom: 2px solid #f0f2f5;
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 10;
+        }
+        
+        .station-item {
+            padding: 10px 16px;
+            border-bottom: 1px solid #f0f2f5;
+            cursor: pointer;
+            transition: background 0.2s;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+        .station-item:hover { background: #fef5f5; }
+        .station-item.active { background: #fadbd8; }
+        
+        .station-num {
+            min-width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: #e74c3c;
+            color: white;
+            font-size: 12px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .station-info { flex: 1; }
+        .station-info .name { font-size: 13px; font-weight: 600; color: #2c3e50; line-height: 1.4; }
+        .station-info .city { font-size: 11px; color: #7f8c8d; margin-top: 2px; }
+        
+        #map {
+            flex: 1;
+            height: 100%;
+            min-height: 500px;
+            position: relative;
+        }
+
+        #map-loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255,255,255,0.95);
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+            z-index: 9999;
+            font-size: 14px;
+            color: #555;
+            text-align: center;
+            transition: opacity 0.5s;
+        }
+        #map-loading .spinner {
+            width: 36px;
+            height: 36px;
+            border: 3px solid #f0f2f5;
+            border-top-color: #e74c3c;
+            border-radius: 50%;
+            margin: 0 auto 10px;
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        
+        .red-flag-marker {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        .red-flag-marker .flag-label {
+            background: rgba(255,255,255,0.92);
+            padding: 1px 6px;
+            border-radius: 3px;
+            font-size: 10px;
+            font-weight: 700;
+            color: #c0392b;
+            white-space: nowrap;
+            margin-bottom: 2px;
+            border: 1px solid #fadbd8;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+        }
+        .red-flag-marker .flag-pole {
+            width: 2px;
+            height: 8px;
+            background: #555;
+        }
+        
+        .leaflet-popup-content {
+            font-size: 13px;
+            line-height: 1.6;
+        }
+        .leaflet-popup-content .popup-title {
+            font-weight: 700;
+            font-size: 14px;
+            color: #c0392b;
+            margin-bottom: 4px;
+        }
+        .leaflet-popup-content .popup-city {
+            color: #7f8c8d;
+            font-size: 12px;
+        }
+        .leaflet-popup-content .popup-coord {
+            color: #95a5a6;
+            font-size: 11px;
+            margin-top: 4px;
+        }
+        
+        .legend {
+            position: absolute;
+            bottom: 20px;
+            right: 10px;
+            background: white;
+            padding: 10px 14px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            z-index: 500;
+            font-size: 12px;
+        }
+        .legend .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin: 2px 0;
+        }
+        .legend .flag-icon {
+            width: 16px;
+            height: 16px;
+        }
+        
+        .leaflet-control-attribution {
+            font-size: 10px;
+        }
+        
+        /* Scrollbar styling */
+        #sidebar::-webkit-scrollbar { width: 6px; }
+        #sidebar::-webkit-scrollbar-track { background: #f0f2f5; }
+        #sidebar::-webkit-scrollbar-thumb { background: #d5dbdb; border-radius: 3px; }
+        #sidebar::-webkit-scrollbar-thumb:hover { background: #bdc3c7; }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>🚩 全国/全球巡回艺术展站点地图</h1>
+        <p>共 31 站 · 横跨中国 20+ 城市，远赴美国华盛顿、韩国首尔</p>
+    </div>
+    <div id="container">
+        <div id="sidebar">
+            <div class="section-title">站点列表（点击定位）</div>
+            <div id="station-list"></div>
+        </div>
+        <div id="map">
+            <div id="map-loading">
+                <div class="spinner"></div>
+                <div>地图加载中...</div>
+            </div>
+        </div>
+        <div class="legend">
+            <div class="legend-item">
+                <svg class="flag-icon" viewBox="0 0 20 24"><path d="M10 0 L10 24" stroke="#555" stroke-width="1.5" fill="none"/><path d="M10 1 L19 4 L10 7 Z" fill="#e74c3c" stroke="#c0392b" stroke-width="0.5"/></svg>
+                <span>展览站点</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+    // 站点数据
+    const stations = [
+        { num: 1, name: "中原工学院", city: "河南·郑州", lat: 34.7470, lng: 113.6150, phase: "全国" },
+        { num: 2, name: "中科院长春光机所", city: "吉林·长春", lat: 43.8680, lng: 125.3280, phase: "全国" },
+        { num: 3, name: "华北电力大学", city: "河北·保定", lat: 38.8890, lng: 115.4640, phase: "全国" },
+        { num: 4, name: "河南大学", city: "河南·开封", lat: 34.8020, lng: 114.3540, phase: "全国" },
+        { num: 5, name: "西华大学", city: "四川·成都", lat: 30.7950, lng: 103.9680, phase: "全国" },
+        { num: 6, name: "人民大学", city: "北京·海淀", lat: 39.9750, lng: 116.3140, phase: "全国" },
+        { num: 7, name: "中南民族大学", city: "湖北·武汉", lat: 30.4760, lng: 114.4050, phase: "全国" },
+        { num: 8, name: "天津城建大学", city: "天津·西青", lat: 39.0820, lng: 117.1320, phase: "全国" },
+        { num: 9, name: "太原理工大学", city: "山西·太原", lat: 37.8700, lng: 112.5480, phase: "全国" },
+        { num: 10, name: "中科院合肥强磁场科学中心", city: "安徽·合肥", lat: 31.8400, lng: 117.2500, phase: "全国" },
+        { num: 11, name: "江西理工大学", city: "江西·赣州", lat: 28.8650, lng: 115.8420, phase: "全国" },
+        { num: 12, name: "大理李政道科学艺术中心", city: "云南·大理", lat: 25.6750, lng: 100.1570, phase: "全国" },
+        { num: 13, name: "山东财经大学", city: "山东·济南", lat: 36.6190, lng: 117.0380, phase: "全国" },
+        { num: 14, name: "运城博物馆", city: "山西·运城", lat: 35.0150, lng: 111.0050, phase: "全国" },
+        { num: 15, name: "中国地质大学", city: "湖北·武汉", lat: 30.5160, lng: 114.4100, phase: "全国" },
+        { num: 16, name: "中国人民大学深圳研究院", city: "广东·深圳", lat: 22.5400, lng: 113.9600, phase: "全国" },
+        { num: 17, name: "美国华盛顿联合数学大会JMM", city: "美国·华盛顿", lat: 38.8921, lng: -77.0259, phase: "全国" },
+        { num: 18, name: "贵州盛华职业学院", city: "贵州·惠水", lat: 26.1480, lng: 106.5600, phase: "全国" },
+        { num: 19, name: "北京科技大学", city: "北京·海淀", lat: 39.9920, lng: 116.3530, phase: "全国" },
+        { num: 20, name: "深圳科学馆", city: "广东·深圳", lat: 22.5480, lng: 114.0850, phase: "全国" },
+        { num: 21, name: "北京大都会庙会", city: "北京·朝阳", lat: 40.0045, lng: 116.3891, phase: "全国" },
+        { num: 22, name: "华南农业大学", city: "广东·广州", lat: 23.1630, lng: 113.3610, phase: "全国" },
+        { num: 23, name: "北京昌平档案馆", city: "北京·昌平", lat: 40.2200, lng: 116.2310, phase: "全球" },
+        { num: 24, name: "韩国CVM会议·世宗大学", city: "韩国·首尔", lat: 37.5518, lng: 127.0736, phase: "全球" },
+        { num: 25, name: "五邑大学", city: "广东·江门", lat: 22.5860, lng: 113.0820, phase: "全球" },
+        { num: 26, name: "吕梁博物馆", city: "山西·吕梁", lat: 37.5180, lng: 111.1410, phase: "全球" },
+        { num: 27, name: "黄石科技馆", city: "湖北·黄石", lat: 30.1990, lng: 115.0390, phase: "全球" },
+        { num: 28, name: "广西民族大学", city: "广西·南宁", lat: 22.8350, lng: 108.2380, phase: "全球" },
+        { num: 29, name: "全国科技活动周海淀主场", city: "北京·海淀", lat: 39.9771, lng: 116.3292, phase: "全球" },
+        { num: 30, name: "安徽寿县文化馆", city: "安徽·寿县", lat: 32.5750, lng: 116.7870, phase: "全球" },
+        { num: 31, name: "黄山科技馆", city: "安徽·黄山", lat: 29.7150, lng: 118.3370, phase: "全球" }
+    ];
+
+    // 初始化地图
+    const map = L.map('map', {
+        minZoom: 2,
+        maxZoom: 18,
+        zoomControl: true
+    }).setView([32.0, 112.0], 4);
+
+    // 添加地图图层 - 高德地图瓦片（国内访问稳定）
+    const normalLayer = L.tileLayer('https://webrd0{s}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}', {
+        attribution: '&copy; 高德地图 AutoNavi',
+        subdomains: ['1', '2', '3', '4'],
+        maxZoom: 18
+    });
+
+    // 备用图层 - OpenStreetMap（海外站点用）
+    const osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors',
+        subdomains: ['a', 'b', 'c'],
+        maxZoom: 18
+    });
+
+    // 添加默认图层
+    normalLayer.addTo(map);
+
+    // 图层切换控件
+    L.control.layers({
+        "高德地图": normalLayer,
+        "OpenStreetMap": osmLayer
+    }, null, { position: 'topright' }).addTo(map);
+
+    // 红旗 SVG 图标
+    function createFlagIcon(station) {
+        const phaseColor = station.phase === "全球" ? "#8e44ad" : "#e74c3c";
+        const phaseStroke = station.phase === "全球" ? "#6c3483" : "#c0392b";
+        return L.divIcon({
+            className: 'red-flag-marker',
+            html: `
+                <div class="flag-label">${station.num}. ${station.name.length > 8 ? station.name.substring(0, 7) + '…' : station.name}</div>
+                <svg width="20" height="28" viewBox="0 0 20 28" style="display:block;">
+                    <line x1="10" y1="2" x2="10" y2="28" stroke="#444" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M10 3 L19 6 L10 9 Z" fill="${phaseColor}" stroke="${phaseStroke}" stroke-width="0.8"/>
+                    <circle cx="10" cy="2" r="2" fill="${phaseColor}" stroke="${phaseStroke}" stroke-width="0.8"/>
+                </svg>
+            `,
+            iconSize: [20, 28],
+            iconAnchor: [10, 28],
+            popupAnchor: [0, -28]
+        });
+    }
+
+    // 存储所有marker
+    const markers = [];
+
+    // 添加标记
+    stations.forEach(station => {
+        const marker = L.marker([station.lat, station.lng], {
+            icon: createFlagIcon(station),
+            title: `第${station.num}站: ${station.name}`
+        });
+
+        const phaseLabel = station.phase === "全球" ? "全球巡回" : "全国巡回";
+        marker.bindPopup(`
+            <div class="popup-title">🚩 第${station.num}站 · ${station.name}</div>
+            <div class="popup-city">📍 ${station.city} | ${phaseLabel}艺术展</div>
+            <div class="popup-coord">坐标: ${station.lat.toFixed(4)}°N, ${station.lng.toFixed(4)}°E</div>
+        `);
+
+        marker.addTo(map);
+        markers.push({ station, marker });
+    });
+
+    // 填充侧边栏
+    const stationList = document.getElementById('station-list');
+    stations.forEach(station => {
+        const item = document.createElement('div');
+        item.className = 'station-item';
+        item.dataset.num = station.num;
+        
+        const phaseColor = station.phase === "全球" ? "#8e44ad" : "#e74c3c";
+        
+        item.innerHTML = `
+            <div class="station-num" style="background:${phaseColor}">${station.num}</div>
+            <div class="station-info">
+                <div class="name">${station.name}</div>
+                <div class="city">${station.city} · ${station.phase}巡回</div>
+            </div>
+        `;
+        
+        item.addEventListener('click', () => {
+            // 移除其他active
+            document.querySelectorAll('.station-item').forEach(el => el.classList.remove('active'));
+            item.classList.add('active');
+            
+            // 飞到该位置
+            map.flyTo([station.lat, station.lng], 10, { duration: 1.2 });
+            
+            // 打开弹窗
+            const target = markers.find(m => m.station.num === station.num);
+            if (target) {
+                setTimeout(() => target.marker.openPopup(), 600);
+            }
+        });
+        
+        stationList.appendChild(item);
+    });
+
+    // 自动适应所有标记
+    const group = L.featureGroup(markers.map(m => m.marker));
+    map.fitBounds(group.getBounds(), { padding: [40, 40] });
+
+    // 地图加载完成后隐藏加载提示
+    map.whenReady(() => {
+        const loading = document.getElementById('map-loading');
+        if (loading) {
+            loading.style.opacity = '0';
+            setTimeout(() => loading.remove(), 500);
+        }
+    });
+
+    // 超时兜底：5秒后强制移除加载提示
+    setTimeout(() => {
+        const loading = document.getElementById('map-loading');
+        if (loading) loading.remove();
+        map.invalidateSize();
+    }, 5000);
+
+    // 窗口大小变化时刷新地图
+    window.addEventListener('resize', () => map.invalidateSize());
+
+    // 添加比例尺
+    L.control.scale({
+        position: 'bottomleft',
+        metric: true,
+        imperial: false
+    }).addTo(map);
+    </script>
+</body>
+</html>
