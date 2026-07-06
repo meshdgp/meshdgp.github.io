@@ -2,49 +2,97 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>"Computational Discrete Global Geometric Structures" - Global Touring Art Exhibition, Public Science Outreach Events</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" />
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; background: #f0f2f5; }
+        body { font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; background: #f0f2f5; overflow-x: hidden; }
 
         #header {
             background: linear-gradient(135deg, #c0392b, #e74c3c);
             color: white;
-            padding: 16px 24px;
+            padding: 12px 16px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.15);
             z-index: 1000;
             position: relative;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-height: 56px;
         }
-        #header h1 { font-size: 22px; font-weight: 700; }
-        #header p { font-size: 13px; opacity: 0.9; margin-top: 4px; }
+        #sidebar-toggle {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            padding: 4px 9px;
+            border-radius: 4px;
+            line-height: 1.4;
+            flex-shrink: 0;
+            transition: background 0.2s;
+            display: none;
+        }
+        #sidebar-toggle:hover { background: rgba(255,255,255,0.35); }
+        #header .header-text { flex: 1; min-width: 0; }
+        #header h1 { font-size: 20px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        #header p { font-size: 12px; opacity: 0.9; margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
         #container {
             display: flex;
-            height: calc(100vh - 70px);
-            min-height: 600px;
+            height: calc(100vh - 56px);
+            min-height: 500px;
+            position: relative;
+            overflow: hidden;
         }
+
+        #sidebar-overlay {
+            display: none;
+            position: fixed;
+            top: 56px; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.4);
+            z-index: 1499;
+        }
+        #sidebar-overlay.show { display: block; }
 
         #sidebar {
             width: 340px;
             background: white;
             overflow-y: auto;
             box-shadow: 2px 0 8px rgba(0,0,0,0.1);
-            z-index: 500;
+            z-index: 1500;
+            flex-shrink: 0;
+            transition: transform 0.3s ease, width 0.3s ease;
         }
 
+        #sidebar .section-header {
+            padding: 12px 16px;
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            border-bottom: 2px solid #f0f2f5;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
         #sidebar .section-title {
-            padding: 12px 16px 8px;
             font-size: 14px;
             font-weight: 700;
             color: #c0392b;
-            border-bottom: 2px solid #f0f2f5;
-            position: sticky;
-            top: 0;
-            background: white;
-            z-index: 10;
         }
+        #sidebar .section-close {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: #999;
+            padding: 2px 6px;
+            line-height: 1;
+        }
+        #sidebar .section-close:hover { color: #333; }
 
         .station-item {
             padding: 10px 16px;
@@ -62,7 +110,6 @@
             min-width: 28px;
             height: 28px;
             border-radius: 50%;
-            background: #e74c3c;
             color: white;
             font-size: 12px;
             font-weight: 700;
@@ -82,6 +129,24 @@
             min-height: 500px;
             position: relative;
         }
+
+        #map-toggle-btn {
+            display: none;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 1000;
+            background: white;
+            border: none;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            padding: 10px 12px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            color: #c0392b;
+        }
+        #map-toggle-btn:hover { background: #fef5f5; }
 
         #map-loading {
             position: absolute;
@@ -114,17 +179,16 @@
             flex-direction: column;
             align-items: center;
             justify-content: flex-end;
+            pointer-events: auto;
         }
         .red-flag-marker .flag-label {
             background: rgba(255,255,255,0.92);
-            padding: 1px 6px;
-            border-radius: 3px;
+            padding: 2px 7px;
+            border-radius: 4px;
             font-size: 10px;
             font-weight: 700;
-            color: #c0392b;
             white-space: nowrap;
             margin-bottom: 2px;
-            border: 1px solid #fadbd8;
             box-shadow: 0 1px 3px rgba(0,0,0,0.15);
         }
         .red-flag-marker .flag-pole {
@@ -140,7 +204,6 @@
         .leaflet-popup-content .popup-title {
             font-weight: 700;
             font-size: 14px;
-            color: #c0392b;
             margin-bottom: 4px;
         }
         .leaflet-popup-content .popup-city {
@@ -158,61 +221,96 @@
             bottom: 20px;
             right: 10px;
             background: white;
-            padding: 10px 14px;
+            padding: 8px 12px;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.15);
             z-index: 500;
+            font-size: 11px;
+            max-height: 50vh;
+            overflow-y: auto;
+        }
+        .legend .legend-title {
+            font-weight: 700;
+            color: #c0392b;
+            margin-bottom: 6px;
             font-size: 12px;
         }
         .legend .legend-item {
             display: flex;
             align-items: center;
             gap: 6px;
-            margin: 2px 0;
+            margin: 3px 0;
         }
-        .legend .flag-icon {
-            width: 16px;
-            height: 16px;
-        }
-
-        .leaflet-control-attribution {
-            font-size: 10px;
+        .legend .legend-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
         }
 
-        /* Scrollbar styling */
+        .leaflet-control-attribution { font-size: 10px; }
+
         #sidebar::-webkit-scrollbar { width: 6px; }
         #sidebar::-webkit-scrollbar-track { background: #f0f2f5; }
         #sidebar::-webkit-scrollbar-thumb { background: #d5dbdb; border-radius: 3px; }
         #sidebar::-webkit-scrollbar-thumb:hover { background: #bdc3c7; }
+
+        @media (max-width: 768px) {
+            #header h1 { font-size: 15px; }
+            #header p { font-size: 11px; }
+            #sidebar-toggle { display: block; }
+            #map-toggle-btn { display: block; }
+            #sidebar {
+                position: fixed;
+                top: 56px; left: 0; bottom: 0;
+                width: 85vw; max-width: 320px;
+                z-index: 1500;
+                transform: translateX(-100%);
+                box-shadow: 4px 0 16px rgba(0,0,0,0.3);
+            }
+            #sidebar.open { transform: translateX(0); }
+            #sidebar .section-close { display: block; }
+            #map { width: 100% !important; }
+            .legend { bottom: 10px; right: 6px; padding: 6px 8px; font-size: 10px; }
+        }
+        @media (min-width: 769px) {
+            #sidebar-toggle { display: block; }
+            #map-toggle-btn { display: none; }
+            #container.sidebar-collapsed #sidebar { width: 0; overflow: hidden; }
+            #container.sidebar-collapsed #map { flex: 1; }
+            #container.sidebar-collapsed #map-toggle-btn { display: block; }
+        }
     </style>
 </head>
 <body>
     <div id="header">
-        <h1>"Computational Discrete Global Geometric Structures"</h1>
-        <p>Global Touring Art Exhibition, Public Science Outreach Events · 31 Stops · 20+ Cities in China, plus Washington D.C. & Seoul</p>
+        <button id="sidebar-toggle" title="Site List">☰</button>
+        <div class="header-text">
+            <h1>"Computational Discrete Global Geometric Structures"</h1>
+            <p>Global Touring Art Exhibition · Public Science Outreach · 31 Stops · 20+ Cities in China, plus Washington D.C. & Seoul</p>
+        </div>
     </div>
     <div id="container">
+        <div id="sidebar-overlay"></div>
         <div id="sidebar">
-            <div class="section-title">Site List (click to locate)</div>
+            <div class="section-header">
+                <div class="section-title">Site List (click to locate)</div>
+                <button class="section-close" title="Close">✕</button>
+            </div>
             <div id="station-list"></div>
         </div>
         <div id="map">
+            <button id="map-toggle-btn" title="Site List">
+{fe30f} Site List</button>
             <div id="map-loading">
                 <div class="spinner"></div>
                 <div>Loading map...</div>
-            </div>
-        </div>
-        <div class="legend">
-            <div class="legend-item">
-                <svg class="flag-icon" viewBox="0 0 20 24"><path d="M10 0 L10 24" stroke="#555" stroke-width="1.5" fill="none"/><path d="M10 1 L19 4 L10 7 Z" fill="#e74c3c" stroke="#c0392b" stroke-width="0.5"/></svg>
-                <span>Exhibition Site</span>
             </div>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
-    // Station data (English)
     const stations = [
         { num: 1, name: "Zhongyuan Univ. of Technology", city: "Zhengzhou, Henan", lat: 34.7470, lng: 113.6150, phase: "National" },
         { num: 2, name: "CIOMP, Chinese Academy of Sciences", city: "Changchun, Jilin", lat: 43.8680, lng: 125.3280, phase: "National" },
@@ -247,163 +345,115 @@
         { num: 31, name: "Huangshan Science Museum", city: "Huangshan, Anhui", lat: 29.7150, lng: 118.3370, phase: "Global" }
     ];
 
-    // Initialize map
-    const map = L.map('map', {
-        minZoom: 2,
-        maxZoom: 18,
-        zoomControl: true
-    }).setView([32.0, 112.0], 4);
+    function getStationColor(num) {
+        const hue = ((num - 1) / stations.length) * 360;
+        return `hsl(${hue}, 65%, 48%)`;
+    }
+    function getStationColorDark(num) {
+        const hue = ((num - 1) / stations.length) * 360;
+        return `hsl(${hue}, 65%, 35%)`;
+    }
 
-    // Google Maps tile layers
+    const map = L.map('map', { minZoom: 2, maxZoom: 18, zoomControl: true }).setView([32.0, 112.0], 4);
+
     const googleStreets = L.tileLayer('https://mt{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
-        attribution: '&copy; Google Maps',
-        subdomains: ['0', '1', '2', '3'],
-        maxZoom: 20
+        attribution: '&copy; Google Maps', subdomains: ['0', '1', '2', '3'], maxZoom: 20
     });
-
     const googleSatellite = L.tileLayer('https://mt{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
-        attribution: '&copy; Google Maps',
-        subdomains: ['0', '1', '2', '3'],
-        maxZoom: 20
+        attribution: '&copy; Google Maps', subdomains: ['0', '1', '2', '3'], maxZoom: 20
     });
-
     const googleHybrid = L.tileLayer('https://mt{s}.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
-        attribution: '&copy; Google Maps',
-        subdomains: ['0', '1', '2', '3'],
-        maxZoom: 20
+        attribution: '&copy; Google Maps', subdomains: ['0', '1', '2', '3'], maxZoom: 20
     });
-
     const googleTerrain = L.tileLayer('https://mt{s}.google.com/vt/lyrs=p&x={x}&y={y}&z={z}', {
-        attribution: '&copy; Google Maps',
-        subdomains: ['0', '1', '2', '3'],
-        maxZoom: 20
+        attribution: '&copy; Google Maps', subdomains: ['0', '1', '2', '3'], maxZoom: 20
     });
-
-    // Fallback: OpenStreetMap
     const osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; OpenStreetMap contributors',
-        subdomains: ['a', 'b', 'c'],
-        maxZoom: 18
+        attribution: '&copy; OpenStreetMap contributors', subdomains: ['a', 'b', 'c'], maxZoom: 18
     });
-
-    // Add default layer
     googleStreets.addTo(map);
+    L.control.layers({ "Google Maps": googleStreets, "Google Satellite": googleSatellite, "Google Hybrid": googleHybrid, "Google Terrain": googleTerrain, "OpenStreetMap": osmLayer }, null, { position: 'topright' }).addTo(map);
 
-    // Layer switcher
-    L.control.layers({
-        "Google Maps": googleStreets,
-        "Google Satellite": googleSatellite,
-        "Google Hybrid": googleHybrid,
-        "Google Terrain": googleTerrain,
-        "OpenStreetMap": osmLayer
-    }, null, { position: 'topright' }).addTo(map);
-
-    // Flag SVG icon
     function createFlagIcon(station) {
-        const phaseColor = station.phase === "Global" ? "#8e44ad" : "#e74c3c";
-        const phaseStroke = station.phase === "Global" ? "#6c3483" : "#c0392b";
+        const color = getStationColor(station.num);
+        const colorDark = getStationColorDark(station.num);
         const shortName = station.name.length > 20 ? station.name.substring(0, 19) + '...' : station.name;
         return L.divIcon({
             className: 'red-flag-marker',
-            html: `
-                <div class="flag-label">${station.num}. ${shortName}</div>
-                <svg width="20" height="28" viewBox="0 0 20 28" style="display:block;">
-                    <line x1="10" y1="2" x2="10" y2="28" stroke="#444" stroke-width="2" stroke-linecap="round"/>
-                    <path d="M10 3 L19 6 L10 9 Z" fill="${phaseColor}" stroke="${phaseStroke}" stroke-width="0.8"/>
-                    <circle cx="10" cy="2" r="2" fill="${phaseColor}" stroke="${phaseStroke}" stroke-width="0.8"/>
-                </svg>
-            `,
-            iconSize: [20, 28],
-            iconAnchor: [10, 28],
-            popupAnchor: [0, -28]
+            html: `<div class="flag-label" style="color:${colorDark};border-color:${color};">${station.num}. ${shortName}</div><svg width="20" height="28" viewBox="0 0 20 28" style="display:block;"><line x1="10" y1="2" x2="10" y2="28" stroke="#444" stroke-width="2" stroke-linecap="round"/><path d="M10 3 L19 6 L10 9 Z" fill="${color}" stroke="${colorDark}" stroke-width="0.8"/><circle cx="10" cy="2" r="2" fill="${color}" stroke="${colorDark}" stroke-width="0.8"/></svg>`,
+            iconSize: [20, 28], iconAnchor: [10, 28], popupAnchor: [0, -28]
         });
     }
 
-    // Store all markers
     const markers = [];
-
-    // Add markers
     stations.forEach(station => {
-        const marker = L.marker([station.lat, station.lng], {
-            icon: createFlagIcon(station),
-            title: `Stop ${station.num}: ${station.name}`
-        });
-
+        const marker = L.marker([station.lat, station.lng], { icon: createFlagIcon(station), title: `Stop ${station.num}: ${station.name}` });
+        const color = getStationColor(station.num);
         const phaseLabel = station.phase === "Global" ? "Global Tour" : "National Tour";
-        marker.bindPopup(`
-            <div class="popup-title">Stop ${station.num} - ${station.name}</div>
-            <div class="popup-city">Location: ${station.city} | ${phaseLabel} Art Exhibition</div>
-            <div class="popup-coord">Coordinates: ${station.lat.toFixed(4)}, ${station.lng.toFixed(4)}</div>
-        `);
-
+        marker.bindPopup(`<div class="popup-title" style="color:${getStationColorDark(station.num)};">Stop ${station.num} - ${station.name}</div><div class="popup-city">Location: ${station.city} | ${phaseLabel} Art Exhibition</div><div class="popup-coord">Coordinates: ${station.lat.toFixed(4)}, ${station.lng.toFixed(4)}</div>`);
         marker.addTo(map);
         markers.push({ station, marker });
     });
 
-    // Populate sidebar
     const stationList = document.getElementById('station-list');
     stations.forEach(station => {
         const item = document.createElement('div');
         item.className = 'station-item';
         item.dataset.num = station.num;
-
-        const phaseColor = station.phase === "Global" ? "#8e44ad" : "#e74c3c";
-
-        item.innerHTML = `
-            <div class="station-num" style="background:${phaseColor}">${station.num}</div>
-            <div class="station-info">
-                <div class="name">${station.name}</div>
-                <div class="city">${station.city} - ${station.phase} Tour</div>
-            </div>
-        `;
-
+        const color = getStationColor(station.num);
+        item.innerHTML = `<div class="station-num" style="background:${color}">${station.num}</div><div class="station-info"><div class="name">${station.name}</div><div class="city">${station.city} - ${station.phase} Tour</div></div>`;
         item.addEventListener('click', () => {
-            // Remove active from others
             document.querySelectorAll('.station-item').forEach(el => el.classList.remove('active'));
             item.classList.add('active');
-
-            // Fly to location
             map.flyTo([station.lat, station.lng], 10, { duration: 1.2 });
-
-            // Open popup
             const target = markers.find(m => m.station.num === station.num);
-            if (target) {
-                setTimeout(() => target.marker.openPopup(), 600);
-            }
+            if (target) setTimeout(() => target.marker.openPopup(), 600);
+            if (window.innerWidth <= 768) closeSidebar();
         });
-
         stationList.appendChild(item);
     });
 
-    // Auto-fit all markers
+    const legendDiv = document.createElement('div');
+    legendDiv.className = 'legend';
+    let legendHTML = '<div class="legend-title">Station Colors</div>';
+    stations.forEach(s => { legendHTML += `<div class="legend-item"><div class="legend-dot" style="background:${getStationColor(s.num)}"></div><span>${s.num}. ${s.name}</span></div>`; });
+    legendDiv.innerHTML = legendHTML;
+    document.getElementById('map').appendChild(legendDiv);
+
+    const sidebarToggle = document.getElementById('sidebar-toggle');
+    const sidebar = document.getElementById('sidebar');
+    const sidebarOverlay = document.getElementById('sidebar-overlay');
+    const sectionClose = sidebar.querySelector('.section-close');
+    const container = document.getElementById('container');
+    const mapToggleBtn = document.getElementById('map-toggle-btn');
+    function isMobile() { return window.innerWidth <= 768; }
+    function openSidebar() {
+        if (isMobile()) { sidebar.classList.add('open'); sidebarOverlay.classList.add('show'); }
+        else { container.classList.remove('sidebar-collapsed'); mapToggleBtn.style.display = 'none'; }
+        sidebarToggle.textContent = '\u2715'; sidebarToggle.title = 'Close site list';
+        setTimeout(() => map.invalidateSize(), 350);
+    }
+    function closeSidebar() {
+        if (isMobile()) { sidebar.classList.remove('open'); sidebarOverlay.classList.remove('show'); }
+        else { container.classList.add('sidebar-collapsed'); mapToggleBtn.style.display = 'block'; }
+        sidebarToggle.textContent = '\u2630'; sidebarToggle.title = 'Open site list';
+        setTimeout(() => map.invalidateSize(), 350);
+    }
+    function toggleSidebar() {
+        if (isMobile()) sidebar.classList.contains('open') ? closeSidebar() : openSidebar();
+        else container.classList.contains('sidebar-collapsed') ? openSidebar() : closeSidebar();
+    }
+    sidebarToggle.addEventListener('click', toggleSidebar);
+    sidebarOverlay.addEventListener('click', closeSidebar);
+    sectionClose.addEventListener('click', closeSidebar);
+    mapToggleBtn.addEventListener('click', openSidebar);
+
     const group = L.featureGroup(markers.map(m => m.marker));
     map.fitBounds(group.getBounds(), { padding: [40, 40] });
-
-    // Hide loading indicator when map is ready
-    map.whenReady(() => {
-        const loading = document.getElementById('map-loading');
-        if (loading) {
-            loading.style.opacity = '0';
-            setTimeout(() => loading.remove(), 500);
-        }
-    });
-
-    // Timeout fallback: remove loading after 5s
-    setTimeout(() => {
-        const loading = document.getElementById('map-loading');
-        if (loading) loading.remove();
-        map.invalidateSize();
-    }, 5000);
-
-    // Refresh map on window resize
-    window.addEventListener('resize', () => map.invalidateSize());
-
-    // Add scale bar
-    L.control.scale({
-        position: 'bottomleft',
-        metric: true,
-        imperial: true
-    }).addTo(map);
+    map.whenReady(() => { const loading = document.getElementById('map-loading'); if (loading) { loading.style.opacity = '0'; setTimeout(() => loading.remove(), 500); } });
+    setTimeout(() => { const loading = document.getElementById('map-loading'); if (loading) loading.remove(); map.invalidateSize(); }, 5000);
+    window.addEventListener('resize', () => { map.invalidateSize(); if (window.innerWidth > 768 && sidebar.classList.contains('open')) { sidebar.classList.remove('open'); sidebarOverlay.classList.remove('show'); } });
+    L.control.scale({ position: 'bottomleft', metric: true, imperial: true }).addTo(map);
     </script>
 </body>
 </html>
